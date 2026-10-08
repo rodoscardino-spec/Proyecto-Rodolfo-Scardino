@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=head, initial-scale=1.0">
+    <title>Informaciòn de contactos</title>
+        <a href="../index.html">Volver</a>
+
+
+       
+</head>
+
+<!--  ===========================   body  ==========================  -->
+
+<body>
+    <header>Contacto</header>
+
+    <!--  ===========================  main  =======================  -->
+    <Main class="contenedor">
+
+            <!-- Formulario conectado a Formspree -->
+            <!-- Reemplazar TU_ID_FORMSPREE con el ID obtenido en formspree.io -->
+            <form action="https://formspree.io/f/xdeaelnk" method="POST" id="Contactos">
+                <!-- 
+                <input type="email" name="email" required />
+                <textarea name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+                -->
+                 
+            <h3>Ingreso de datos</h3>
+
+            <div class="form-datos">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ej:Messi" required>
+            </div>  
+
+            <div class="form-datos">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej:Leonel" required>
+            </div>  
+
+             <div class="form-datos">
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" placeholder="Ej:leomessi@siempregracias.com.ar" required>
+            </div>  
+
+            <div class="form-datos">
+                <label for="celular">Nùmero de celular</label>
+                <input type="tel" id="celular" name="celular" placeholder="Ej:54-9-11-1234-5678" required>
+            </div>
+
+             <div class="form-datos">
+                <label for="domicilio">Calle y nro</label>
+                <input type="text" id="domicilio" name="domicilio" placeholder="Ej:Av. Angel Gallardo 22" required>
+            </div>
+
+            <div class="form-datos">
+                <label for="localidad">Localidad</label>
+                <input type="text" id="localidad" name="localidad" placeholder="C.A.B.A." required>
+            </div>
+
+            <div class="form-datos">
+                <label for="localidad">Localidad</label>
+                <input type="text" id="localidad" name="localidad" placeholder="C.A.B.A." required>
+            </div>
+
+            <div class="form-datos">
+                <label for="sexo">Sexo</label>
+                <select id="sexo" name="sexo" required>
+                     <option value="" disabled selected>Selecciona una opción</option>
+                     <option value="femenino">Femenino</option>
+                     <option value="masculino">Masculino</option>
+                </select>
+            </div>
+
+            <div class="form-datos">
+                <label for="mensaje">Ingrese su mensaje</label>
+                <textarea name="message" required></textarea>
+            </div>
+
+
+            <button type="submit" class="btn-submit">Guardar datos</button>
+            
+
+        </form> 
+
+    
+
+    
+    </Main>
+
+
+
+
+
+    <!--  =======================  FOOTER  ============================  -->
+    <footer>Faltan los datos del equipo</footer>
+</body>
+</html>

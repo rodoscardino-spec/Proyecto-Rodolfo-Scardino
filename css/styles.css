@@ -1,0 +1,364 @@
+/* importar google fonts*/
+
+/* Selector universal es el *{} ->> sirve para marco general */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "spartan", "sans-serif";
+}
+
+
+/* primero definimos tipografìas base, de menor especificad */
+/* ejemplo h1, h2, etc*/
+
+body{
+    /*
+    width: 100%;
+    padding: 20px;
+    */
+    /* Convierte al body en un contenedor flex vertical */
+    display: flex;
+    flex-direction: column;
+    /* Asegura que el body ocupe mínimo el 100% del alto de la pantalla visible */
+    min-height: 100vh;
+}
+
+/* 2. CONTENIDO PRINCIPAL: Empuja al footer hacia abajo */
+main.contenido-principal {
+  /* flex-grow: 1 hace que <main> absorba todo el espacio vertical disponible */
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* ------------     header   ------------- */
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    /*align-items: center; */
+    width: 100%;
+    height: 50px;
+    /* padding admite 4 paràmetros arriba-derecha-abajo-izquierda */
+    padding: 20px 80px ;
+    box-shadow: 0 5px 15px rgba(red, green, blue, alpha);
+    position: sticky;
+    border: 2px solid black;
+    background-color: aqua;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+
+/*   -------   Barra de navegaciòn horizontal   ----------  */
+
+.navbar{
+    display: flex;
+    justify-content:space-around;
+   /* justify-content: space-evenly; */
+    justify-items: left;
+   /* align-items: center; */
+}
+
+.navbar li{
+    /* none quita el puntito en el link de menù */
+    list-style: none;
+    /* text-decoration none quita la lìnea subrayada del link*/
+    text-decoration: none;
+    font-weight: 600;  /* negrita */
+}
+
+.navbar a:hover {
+    color: darkgreen;
+    font-size: 2rem;
+}
+
+
+
+/*  -------------  hero - background-image ----------  */
+.hero{
+    background-image: url(../imgs/cocco.jpg);
+    display: flex;
+    justify-content: flex-start;
+    /* justify-content: flex-end; */
+    align-items: center;
+    min-height: 85vh;
+    width: 100%;
+    padding: 0 80px;
+    background-size: cover;
+    background-position: top 25% center; 
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
+}
+
+/* contenedor de la imagen */
+.hero .hero-content{
+    width: 450px;
+    height: 300px;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    z-index: 1;
+
+}
+
+.hero .hero-content h4{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+
+}
+
+/*  ---  botòn dentro de hero  -----*/
+.hero .hero-content button{
+    padding: 12px 25px;
+    cursor: pointer;
+}
+
+.hero .hero-content button:hover{
+    background-color: blue;
+}
+
+/*  -- ejemplo de botòn -- */
+.boton{
+    width: 40px;
+    height: 80px;
+    background-color: beige;
+    color: white;
+    border-radius: 50%;
+    border: 2px;
+}
+
+/* responsive Hero*/
+@media(max-width: 1200px) {
+    .hero{
+        padding: 0% 60px;
+    }
+}
+
+@media(max-width: 768px) {
+    .hero{
+        padding: 0% 40px;
+        height: 70px;
+        justify-content: center;
+        background-position: top center;
+    }
+}
+
+@media(max-width: 576px) {
+    .hero{
+        padding: 0% 20px;
+        height: 60vh;
+        justify-content: center;
+        background-position: 55% center;
+    }
+}
+
+/*  ------------------   flexbox  Productos  ----------------------*/
+/* flexbox se usa para ordernar elementos dentro de un container */
+/*  dentro de un container, los elementos tambièn pueden ser containers*/
+/* flexbox se ordena en 1 sola direcciòn: horizontal o vertical */
+
+.section-productos {
+    text-align: center;
+}
+
+/*
+.section-productos .flex-container{
+    border: 1px solid black;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    height: 100px;
+
+}
+*/
+
+.section-productos .flex-productos-container{
+   /* border: 1px solid black; */
+    /*background-color: antiquewhite;*/
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    align-items: center;
+    width: 40%;
+    min-height: 80px;
+    /*
+    gap: 10px;
+    padding: 15px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 1;
+  */
+}
+
+/*
+.productos-container{
+    border: 1px solid black;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+    height: 80px;
+}
+*/
+
+.section-productos .flex-productos-container .producto{
+    flex: 1 1 calc(33.333% -20px );
+    min-width: 260px; 
+    display: flex;
+    width: 40;
+    height: 60;
+    padding: 10px 12px;
+    justify-content: center;
+     border-radius: 20px;
+    border: 1px solid #cce7d0;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    transition: 0.8s ease;
+    position: relative;
+    /* Flexbox con estos atributos busco ordenar imagen y texto verticalmente */
+    flex-direction: column;
+    transition: transform 0.2s ease;
+ 
+}
+
+.section-productos .flex-productos-container .producto-descripcion {
+     width: 100%;
+    border-radius: 20px;
+    height: 75px;
+    object-fit: contain;
+    display: block;
+}
+
+
+.producto-descripcion h5{
+    font-size: 0.6rem;
+    color: #333;
+}
+
+.producto-descripcion h4{
+    font-size: 0.8rem;
+    color: #333;
+}
+
+
+/* con esto se mueve el producto cuando pongo el cursor encima de la imagen */
+.producto:hover{
+    transform: translateY(-5px);
+}
+
+
+.section-productos .productos-container .producto .carrito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 12px;
+    border-radius: 8px;
+    background-color: #088178;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+}
+
+
+img{
+    width: 100%;
+    min-height: 200px;
+    object-fit: cover;
+}
+
+
+.data-precio{
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-top: auto; /* Empuja el precio al fondo de la tarjeta */
+}
+
+.elemento{
+    align-items: center;
+}
+
+.elemento5{
+    align-items: center;
+}
+
+.h2{
+    color:blueviolet;
+}
+
+.h3{
+    color:blueviolet;
+}
+
+
+.footer{
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto; /* Garantiza que se ubique al final del flujo */
+  position: relative;
+  
+}
+
+.footer col{
+    position: sticky;
+}
+
+
+/*  -----------------------   todavìa sin usar   --------------------------*/
+
+/*  --------    botòn hamburguesa     ---------- */
+.mobile{
+    display: none;
+    align-items: center;
+}
+
+/*  ----------  botòn para cerrar botòn mobile -------  */
+.close{
+    display: none;
+}
+
+/*   ------------   Responsive    ---------------------*/
+@media(max-width:799px){
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300;
+        height: 100;
+        width: 300;
+
+    }
+}
+
+.mobile i{
+    color: blue;
+    font-size: 24px;
+    padding-left: 20px;
+}
+
+
+/* ------ Clase q se agrega para usar con javascript ---  */
+.active{
+    right: 0px;
+}
+
+.close{
+    display: initial;
+}
+/* fin Clase q se agrega para usar con javascript */
