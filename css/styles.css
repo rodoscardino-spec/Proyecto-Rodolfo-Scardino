@@ -8,6 +8,9 @@
     font-family: "spartan", "sans-serif";
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 /* primero definimos tipografìas base, de menor especificad */
 /* ejemplo h1, h2, etc*/
@@ -35,14 +38,15 @@ main.contenido-principal {
 
 .header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-end;
     /*align-items: center; */
     width: 100%;
     height: 50px;
     /* padding admite 4 paràmetros arriba-derecha-abajo-izquierda */
     padding: 20px 80px ;
-    box-shadow: 0 5px 15px rgba(red, green, blue, alpha);
+    /*box-shadow: 0 5px 15px rgba(red, green, blue, alpha);*/
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     position: sticky;
     border: 2px solid black;
     background-color: aqua;
@@ -50,6 +54,8 @@ main.contenido-principal {
     position: sticky;
     top: 0;
     left: 0;
+
+
 }
 
 
@@ -57,25 +63,24 @@ main.contenido-principal {
 
 .navbar{
     display: flex;
-    justify-content:space-around;
+    justify-content:center;
    /* justify-content: space-evenly; */
-    justify-items: left;
-   /* align-items: center; */
+   /* justify-items: left;*/
+    align-items: center; 
 }
 
 .navbar li{
-    /* none quita el puntito en el link de menù */
-    list-style: none;
-    /* text-decoration none quita la lìnea subrayada del link*/
-    text-decoration: none;
+    list-style: none; /* none quita el puntito en el link de menù */
+    text-decoration: none;  /* text-decoration none quita la lìnea subrayada del link*/
     font-weight: 600;  /* negrita */
+    padding: 0 20px;   /* genera la separaciòn entre los elementos de la lista */
 }
 
+/* hover -> cambia tamaño del elemento cuando se posiciona encima el mouse */
 .navbar a:hover {
     color: darkgreen;
     font-size: 2rem;
 }
-
 
 
 /*  -------------  hero - background-image ----------  */
@@ -85,14 +90,19 @@ main.contenido-principal {
     justify-content: flex-start;
     /* justify-content: flex-end; */
     align-items: center;
-    min-height: 85vh;
+    /*min-height: 95vh; */
+    height: 95vh;
     width: 100%;
     padding: 0 80px;
     background-size: cover;
-    background-position: top 25% center; 
+    /*background-position: top 25% center; */
+    background-position: top 5% center;
+    padding: 0 80px;
     background-repeat: no-repeat;
     margin-bottom: 40px;
 }
+
+
 
 /* contenedor de la imagen */
 .hero .hero-content{
@@ -102,14 +112,14 @@ main.contenido-principal {
     align-items: flex-end;
     text-align: right;
     z-index: 1;
-
 }
 
-.hero .hero-content h4{
-    font-size: 2.5rem;
+.hero .hero-content h5{
+    font-size: 1.5rem;
     margin-bottom: 10px;
-
 }
+
+
 
 /*  ---  botòn dentro de hero  -----*/
 .hero .hero-content button{
@@ -120,6 +130,17 @@ main.contenido-principal {
 .hero .hero-content button:hover{
     background-color: blue;
 }
+
+.hero .hero-content button {
+    background-color: #088178;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 
 /*  -- ejemplo de botòn -- */
 .boton{
@@ -155,6 +176,44 @@ main.contenido-principal {
         background-position: 55% center;
     }
 }
+
+/* -------------------------   BANNER    -----------------------  */
+
+.banner {
+    width: 100%;
+    height: 40vh;
+    background-image: url(img/banner/b19.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.banner button {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+
+.banner button:hover {
+    background: #088178;
+    color: #fff;
+}
+
+
+
 
 /*  ------------------   flexbox  Productos  ----------------------*/
 /* flexbox se usa para ordernar elementos dentro de un container */
@@ -303,7 +362,13 @@ img{
 }
 
 
+
+/*  --------------------    footer    ---------------------- */
+
 .footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background-color: #222;
   color: #fff;
   text-align: center;
@@ -313,9 +378,40 @@ img{
   
 }
 
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+
+/*
 .footer col{
     position: sticky;
 }
+*/
+
+footer .follow i {
+    color: #465b52;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+/* esto no me està andando .. 
+.footer .follow i:hover {
+    background: #088178;
+    color: #fff;
+}
+*/
+
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+
 
 
 /*  -----------------------   todavìa sin usar   --------------------------*/
